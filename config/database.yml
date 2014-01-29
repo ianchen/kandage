@@ -1,0 +1,24 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: kandage 
+  host: localhost
+  username: root
+  password: thekono1
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: kandage_test
+  host: localhost
+  username: root
+  password: thekono1
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: kandage
+  host: localhost
+  username: root
+  password: thekono1
+
