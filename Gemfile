@@ -48,6 +48,4 @@ end
 
 gem 'httparty'
 gem 'httmultiparty'
-
-
-
+gem 'nokogiri'
