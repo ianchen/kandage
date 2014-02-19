@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219041703) do
+ActiveRecord::Schema.define(version: 20140219113203) do
 
   create_table "companies", force: true do |t|
     t.integer "symbol"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140219041703) do
   end
 
   create_table "m_data", force: true do |t|
-    t.integer "company"
+    t.integer "company_id"
     t.integer "month"
     t.integer "is_consolidated"
     t.float   "month_average_price"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140219041703) do
   end
 
   create_table "q_data", force: true do |t|
-    t.integer "company"
+    t.integer "company_id"
     t.integer "quarter"
     t.integer "is_consolidated"
     t.float   "revenue"
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 20140219041703) do
   end
 
   create_table "y_data", force: true do |t|
-    t.integer "company"
+    t.integer "company_id"
     t.integer "year"
     t.integer "is_consolidated"
     t.float   "revenue"
