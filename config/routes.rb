@@ -3,6 +3,12 @@ Kandage::Application.routes.draw do
   post 'companies/refresh' => 'company#refresh'
   post 'companies/:company_symbol/m_data/refresh' => 'company#refresh_m_data'
   post 'companies/m_data/refresh' => 'company#refresh_m_data_all'
+  post 'companies/:company_symbol/q_data/refresh' => 'company#refresh_q_data'
+  post 'companies/q_data/refresh' => 'company#refresh_q_data_all'
+  post 'companies/:company_symbol/y_data/refresh' => 'company#refresh_y_data'
+  post 'companies/y_data/refresh' => 'company#refresh_y_data_all'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

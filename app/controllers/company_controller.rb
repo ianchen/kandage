@@ -21,4 +21,32 @@ class CompanyController < ApplicationController
     render :json => {:status => "success"} 
   end
 
+  def refresh_q_data 
+    company = Company.where(:symbol => params[:company_symbol]).first
+    company.refresh_q_data
+    render :json => {:status => "success"} 
+  end
+  
+  def refresh_q_data_all
+    companies = Company.all
+    companies.each do |company|
+      company.refresh_q_data
+    end
+    render :json => {:status => "success"} 
+  end
+
+  def refresh_y_data 
+    company = Company.where(:symbol => params[:company_symbol]).first
+    company.refresh_y_data
+    render :json => {:status => "success"} 
+  end
+  
+  def refresh_y_data_all
+    companies = Company.all
+    companies.each do |company|
+      company.refresh_y_data
+    end
+    render :json => {:status => "success"} 
+  end
+
 end
