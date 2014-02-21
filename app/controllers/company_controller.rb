@@ -16,7 +16,9 @@ class CompanyController < ApplicationController
   def refresh_m_data_all
     companies = Company.all
     companies.each do |company|
-      company.refresh_m_data
+      if company.symbol.to_s.size < 5
+        company.refresh_m_data
+      end
     end
     render :json => {:status => "success"} 
   end
@@ -30,7 +32,9 @@ class CompanyController < ApplicationController
   def refresh_q_data_all
     companies = Company.all
     companies.each do |company|
-      company.refresh_q_data
+      if company.symbol.to_s.size < 5
+        company.refresh_q_data
+      end
     end
     render :json => {:status => "success"} 
   end
@@ -44,7 +48,9 @@ class CompanyController < ApplicationController
   def refresh_y_data_all
     companies = Company.all
     companies.each do |company|
-      company.refresh_y_data
+      if company.symbol.to_s.size < 5
+        company.refresh_y_data
+      end
     end
     render :json => {:status => "success"} 
   end

@@ -12,18 +12,39 @@ class Company < ActiveRecord::Base
   end
 
   def refresh_m_data
-    save_m_data(JSON.parse(get_raw_data(1)), 1)
-    save_m_data(JSON.parse(get_raw_data(0)), 0)
+    raw_data_consolidated = JSON.parse(get_raw_data(1))
+    raw_data_unconsolidated = JSON.parse(get_raw_data(0))
+   
+    if raw_data_consolidated.size > 1
+      save_m_data(raw_data_consolidated, 1)
+    end 
+    if raw_data_unconsolidated.size > 1
+      save_m_data(raw_data_unconsolidated, 0)
+    end 
   end
 
   def refresh_q_data
-    save_q_data(JSON.parse(get_raw_data(1)), 1)
-    save_q_data(JSON.parse(get_raw_data(0)), 0)
+    raw_data_consolidated = JSON.parse(get_raw_data(1))
+    raw_data_unconsolidated = JSON.parse(get_raw_data(0))
+   
+    if raw_data_consolidated.size > 1
+      save_q_data(raw_data_consolidated, 1)
+    end 
+    if raw_data_unconsolidated.size > 1
+      save_q_data(raw_data_unconsolidated, 0)
+    end 
   end
 
   def refresh_y_data
-    save_y_data(JSON.parse(get_raw_data(1)), 1)
-    save_y_data(JSON.parse(get_raw_data(0)), 0)
+    raw_data_consolidated = JSON.parse(get_raw_data(1))
+    raw_data_unconsolidated = JSON.parse(get_raw_data(0))
+   
+    if raw_data_consolidated.size > 1
+      save_y_data(raw_data_consolidated, 1)
+    end 
+    if raw_data_unconsolidated.size > 1
+      save_y_data(raw_data_unconsolidated, 0)
+    end 
   end
 
 
