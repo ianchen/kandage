@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140219113203) do
+ActiveRecord::Schema.define(version: 20140221154239) do
 
   create_table "companies", force: true do |t|
     t.integer "symbol"
